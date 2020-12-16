@@ -1,0 +1,11 @@
+vector hitDir = chv('Vector_Dir');
+vector hitPoint;
+vector uvw;
+
+int primNum = intersect(1, @P, hitDir, hitPoint, uvw);
+
+if (primNum >= 0)
+{
+  @P = hitPoint;
+  @N = prim(1, 'N', primNum);
+}
